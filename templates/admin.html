@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Panel de Administración - Control de Papelería</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3QgeD0iNCIgeT0iMiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI4IiByeD0iMyIgZmlsbD0iIzI1NjNlYiIvPjxwYXRoIGQ9Ik0xMCAxNGw0IDQgOC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <style>
+        :root { --font: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .hidden { display: none !important; }
+
+        .status-cell {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        .status-cell:active { transform: scale(0.95); }
+        .status-cell.editing { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.2); }
+        .status-en_orden { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+        .status-no_entregado { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+        .status-hace_falta { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+
+        .estado-selector {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            position: relative;
+        }
+        .estado-selector select {
+            padding: 0.3rem 0.5rem;
+            border-radius: 6px;
+            border: 2px solid var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: white;
+        }
+
+        .papeleria-grid {
+            overflow-x: auto;
+            max-width: 100%;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+        }
+        .papeleria-grid > * {
+            min-width: 0;
+        }
+        .papeleria-grid table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            min-width: 0;
+        }
+        .papeleria-grid th, .papeleria-grid td {
+            padding: 0.6rem 0.75rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+        .papeleria-grid th {
+            background: var(--primary-bg);
+            font-weight: 700;
+            color: var(--primary-dark);
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+        .papeleria-grid th:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 3;
+            background: var(--primary-bg);
+        }
+        .papeleria-grid td:first-child {
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-dark);
+            position: sticky;
+            left: 0;
+            background: var(--white);
+            z-index: 1;
+        }
+        .papeleria-grid tr:hover td { background: var(--primary-bg); }
+        .papeleria-grid tr:hover td:first-child { background: var(--primary-bg); }
+
+        .search-result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            -webkit-tap-highlight-color: rgba(37,99,235,0.2);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        .search-result-item:hover {
+            background: var(--primary-bg);
+            border-color: var(--primary);
+        }
+        .search-result-item:active {
+            background: var(--primary-bg);
+            border-color: var(--primary);
+            transform: scale(0.99);
+        }
+        .search-result-item.selected {
+            background: var(--primary-bg);
+            border-color: var(--primary);
+            border-width: 2px;
+        }
+        .estudiante-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            word-break: break-all;
+            font-size: 0.85rem;
+        }
+        .tipo-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-bg);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+        }
+        .btn-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.2rem;
+            color: var(--text-muted);
+        }
+        .btn-icon:hover { color: var(--danger); }
+        .btn-icon.edit:hover { color: var(--primary); }
+
+        .tipo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .tipo-tag {
+                padding: 0.5rem 0.85rem;
+                font-size: 0.85rem;
+            }
+            .btn-icon {
+                padding: 0.4rem;
+                font-size: 1.1rem;
+            }
+            .estudiante-badge {
+                font-size: 0.78rem;
+                padding: 0.5rem 0.75rem;
+                flex-wrap: wrap;
+            }
+
+            .papeleria-grid th,
+            .papeleria-grid td:first-child,
+            .papeleria-grid th:first-child {
+                position: static !important;
+            }
+
+            .papeleria-grid select.cambiar-estado {
+                min-height: 44px;
+                font-size: 0.85rem;
+            }
+
+            #btn-guardar-papeleria {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .estado-selector select {
+                min-height: 44px;
+                font-size: 0.85rem;
+                padding: 0.4rem 0.6rem;
+            }
+
+            .admin-sidebar {
+                position: relative;
+                top: auto;
+                z-index: auto;
+            }
+
+            .admin-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .admin-content {
+                padding: 1rem;
+                min-width: 0;
+            }
+
+            header {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .header-logo h1 {
+                font-size: 0.85rem;
+            }
+
+            .header-logo p {
+                font-size: 0.7rem;
+            }
+
+            .header-logo img {
+                height: 50px !important;
+                width: 50px !important;
+            }
+
+            .user-badge {
+                gap: 0.5rem;
+            }
+
+            .user-badge .btn-outline {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.5rem;
+            }
+
+            .stat-card {
+                padding: 1rem;
+            }
+
+            .breadcrumb {
+                font-size: 0.75rem;
+            }
+
+            .table th, .table td {
+                padding: 0.4rem 0.5rem;
+                font-size: 0.75rem;
+                white-space: nowrap;
+            }
+
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .login-card {
+                margin: 0 0.5rem;
+                padding: 1.5rem;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr 1fr !important;
+            }
+
+            .tipo-grid {
+                gap: 0.5rem;
+            }
+        }
+
+        .stats-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0.75rem;
+            background: var(--primary-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+        .stats-bar-items {
+            flex: 1;
+            display: flex;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .stats-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            white-space: nowrap;
+        }
+        .stats-pill i { font-size: 1.3rem; }
+        .stats-bar-toggle {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 8px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            transition: all 0.15s;
+        }
+        .stats-bar-toggle:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .stats-bar-toggle.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .grado-card { cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+        .grado-card:hover { border-color: var(--primary); }
+        .grado-card.selected {
+            border-color: var(--primary);
+            border-width: 2px;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+        .chart-panel {
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.25rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+        .chart-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        .chart-panel-bars { display: flex; flex-direction: column; gap: 0.6rem; }
+        .chart-row-label { display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .chart-bar-bg { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+        .chart-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s ease-out; }
+        .chart-bar-success { background: var(--success); }
+        .chart-bar-danger { background: var(--danger); }
+        .options-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: none;
+            border-radius: 8px;
+            background: none;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: background 0.15s;
+        }
+        .options-item:hover { background: var(--primary-bg); }
+        .options-item i { font-size: 1.1rem; color: var(--text-muted); }
+        .options-danger { color: var(--danger); }
+        .options-danger i { color: var(--danger); }
+        .options-info { cursor: default; color: var(--text-muted); font-size: 0.8rem; }
+        .options-info i { color: var(--text-muted); }
+        .header-icon-btn {
+            width: 36px; height: 36px;
+            border: none; border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.12);
+            color: white;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+            position: relative;
+        }
+        .header-icon-btn:hover { background: rgba(255,255,255,0.25); }
+
+        @media (max-width: 400px) {
+            .admin-content {
+                padding: 0.75rem;
+            }
+
+            .admin-menu-item {
+                min-width: 100px !important;
+            }
+
+            .admin-menu-link {
+                font-size: 0.7rem !important;
+                padding: 0.4rem 0.3rem !important;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr !important;
+            }
+
+            .search-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/static/logo.png" alt="Logo" style="height: 60px; width: 60px; object-fit: contain;">
+                <div>
+                    <h1>Panel Administrativo</h1>
+                    <p>Control de Papelería - Instituto María Belén Medrano</p>
+                </div>
+            </div>
+            <div class="user-badge" style="position:relative;">
+                <button type="button" id="btn-options" class="header-icon-btn" aria-label="Opciones" onclick="toggleOpciones(event)">
+                    <i class="ph ph-gear-six"></i>
+                </button>
+                <div id="options-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);right:0;min-width:200px;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:500;padding:0.4rem;">
+                    <button type="button" id="opt-theme" class="options-item" onclick="toggleTema(event)"><i class="ph ph-sun-dim"></i> <span>Tema oscuro</span></button>
+                    <div style="height:1px;background:var(--border);margin:0.25rem 0.5rem;"></div>
+                    <div class="options-item options-info" style="cursor:default;"><i class="ph ph-calendar"></i> <span id="opt-anios">Años 2020–2027</span></div>
+                    <div style="height:1px;background:var(--border);margin:0.25rem 0.5rem;"></div>
+                    <button type="button" class="options-item options-danger" onclick="handleLogout(event)"><i class="ph ph-sign-out"></i> <span>Cerrar sesión</span></button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <div style="width: 32px; height: 32px; background-color: var(--secondary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem;">A</div>
+                    <div class="user-info">
+                        <div class="user-name">Administración</div>
+                        <div class="user-meta">Control Académico</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container" style="margin-top: 2rem;">
+
+        <div class="breadcrumb" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+                <a href="#">Panel</a>
+                <span class="divider">></span>
+                <span id="breadcrumb-section" class="active">Gestión Papelería</span>
+            </div>
+            <button id="btn-toggle-sidebar" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; border-color: var(--border);">
+                <i class="ph ph-sidebar"></i> Alternar Menú
+            </button>
+        </div>
+
+        <!-- Quick Search Bar -->
+        <div class="search-bar-compact" style="margin-bottom:1.5rem;z-index:1;">
+            <i class="ph ph-magnifying-glass search-icon"></i>
+            <input type="text" id="quick-search-input" placeholder="Buscar estudiante por nombre o CUI..." autocomplete="off">
+            <button class="search-btn" id="quick-search-btn"><i class="ph ph-magnifying-glass"></i> Buscar</button>
+            <div id="quick-search-results" style="position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:200;background:var(--white);border:1px solid var(--border);border-radius:10px;max-height:250px;overflow-y:auto;display:none;box-shadow:0 4px 16px rgba(15,23,42,0.12),0 12px 32px rgba(15,23,42,0.1);"></div>
+        </div>
+
+        <!-- Compact Stats Bar -->
+        <div id="admin-stats-bar" class="stats-bar">
+            <div class="stats-bar-items" id="admin-stats-dashboard"></div>
+            <button type="button" id="btn-toggle-chart" class="stats-bar-toggle" aria-label="Ver detalle de expedientes">
+                <i class="ph ph-chart-bar"></i>
+            </button>
+        </div>
+        <div id="chart-panel" class="chart-panel hidden">
+            <div class="chart-panel-header">
+                <span>Estado de Expedientes</span>
+                <span id="chart-total-alumnos">0 alumnos</span>
+            </div>
+            <div class="chart-panel-bars">
+                <div>
+                    <div class="chart-row-label"><span>🟢 Completos</span><span id="chart-pct-completo">0%</span></div>
+                    <div class="chart-bar-bg"><div id="chart-bar-completo" class="chart-bar-fill chart-bar-success" style="width:0%"></div></div>
+                </div>
+                <div>
+                    <div class="chart-row-label"><span>🔴 Incompletos</span><span id="chart-pct-incompleto">0%</span></div>
+                    <div class="chart-bar-bg"><div id="chart-bar-incompleto" class="chart-bar-fill chart-bar-danger" style="width:0%"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="alert-box" class="alert" style="display: none;"></div>
+
+        <div class="admin-grid">
+
+            <div class="admin-sidebar">
+                <div>
+                    <div class="admin-logo-box">
+                        <img src="/static/logo.png" alt="Logo" style="height: 90px; width: 90px; object-fit: contain; margin-bottom: 0.5rem;">
+                        <h3>Control Escolar</h3>
+                    </div>
+                    <ul class="admin-menu">
+                        <li class="admin-menu-item">
+                            <button id="tab-link-papeleria" class="admin-menu-link active tab-btn">
+                                <i class="ph ph-clipboard-text"></i> Gestión Papelería
+                            </button>
+                        </li>
+                        <li class="admin-menu-item">
+                            <button id="tab-link-tipos" class="admin-menu-link tab-btn">
+                                <i class="ph ph-tag"></i> Tipos Papelería
+                            </button>
+                        </li>
+                        <li class="admin-menu-item">
+                            <button id="tab-link-alumnos" class="admin-menu-link tab-btn">
+                                <i class="ph ph-users"></i> Gestión Alumnos
+                            </button>
+                        </li>
+                        <li class="admin-menu-item">
+                            <button id="tab-link-logs" class="admin-menu-link tab-btn">
+                                <i class="ph ph-scroll"></i> Logs Auditoría
+                            </button>
+                        </li>
+                        <li class="admin-menu-item">
+                            <button id="tab-link-alertas" class="admin-menu-link tab-btn">
+                                <i class="ph ph-warning-circle"></i> Alertas
+                            </button>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="admin-content">
+
+                <section id="section-papeleria" class="admin-section active">
+                    <div class="admin-section-header">
+                        <h2>Gestión de Papelería</h2>
+                        <p>Busque un estudiante y gestione el estado de su documentación por año y tipo.</p>
+                    </div>
+
+                    <div class="search-bar-compact" style="margin-bottom:1.5rem;max-width:500px;">
+                        <i class="ph ph-magnifying-glass search-icon"></i>
+                        <input type="text" id="buscar-estudiante" placeholder="Buscar por nombre o CUI...">
+                        <button class="search-btn" id="btn-buscar"><i class="ph ph-magnifying-glass"></i> Buscar</button>
+                    </div>
+
+                    <!-- Circular Progress Gauge Card -->
+                    <div id="completion-gauge-card" class="stat-card hidden" style="margin-bottom: 1.5rem; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <svg width="70" height="70" viewBox="0 0 36 36" style="transform: rotate(-90deg); flex-shrink: 0;">
+                                <circle cx="18" cy="18" r="15.915" fill="none" stroke="var(--border)" stroke-width="3.5"></circle>
+                                <circle id="gauge-progress" cx="18" cy="18" r="15.915" fill="none" stroke="var(--success)" stroke-width="3.5" stroke-dasharray="0, 100" style="transition: stroke-dasharray 0.5s ease-in-out;"></circle>
+                            </svg>
+                            <div>
+                                <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">Avance de Expediente</h4>
+                                <p id="gauge-percentage-text" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">0% de papelería completa</p>
+                            </div>
+                        </div>
+                        <div id="gauge-badge" class="status-cell status-null">Sin datos</div>
+                    </div>
+
+                    <div id="resultados-busqueda" style="margin-bottom: 1.5rem;"></div>
+                    <div id="estudiante-seleccionado" class="hidden"></div>
+
+                    <div class="admin-section-header" style="margin-top: 2rem;">
+                        <h2><i class="ph ph-download-simple"></i> Exportar Listado por Grado</h2>
+                        <p>Descargue un Excel con los estudiantes de un grado y sección específicos.</p>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: end;">
+                        <div>
+                            <label style="font-size:0.75rem;font-weight:600;">Grado:</label>
+                            <select id="export-grado" class="form-control" style="padding:0.5rem 0.8rem;">
+                                <option value="">Cargando...</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="font-size:0.75rem;font-weight:600;">Sección:</label>
+                            <select id="export-seccion" class="form-control" style="padding:0.5rem 0.8rem;">
+                                <option value="">Cargando...</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="font-size:0.75rem;font-weight:600;">Caja (opcional):</label>
+                            <input type="text" id="export-caja" class="form-control" placeholder="Ej: Caja 1" style="padding:0.5rem 0.8rem;width:120px;">
+                        </div>
+                        <div>
+                            <button id="btn-exportar-excel" class="btn btn-success" style="padding:0.5rem 1.2rem;"><i class="ph ph-download-simple"></i> Exportar Excel</button>
+                        </div>
+                    </div>
+                    <div id="selector-anio" class="hidden" style="margin-bottom:1rem;display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+                        <span style="font-weight:600;font-size:0.9rem;">Año:</span>
+                        <div id="anio-botones" style="display:flex;gap:0.5rem;flex-wrap:wrap;"></div>
+                    </div>
+
+                    <!-- Skeleton Loader for admin grid -->
+                    <div id="skeleton-loading-admin" class="hidden" style="margin: 2rem 0;">
+                        <div class="skeleton" style="height: 45px; border-radius: 8px; margin-bottom: 1rem;"></div>
+                        <div class="skeleton" style="height: 30px; border-radius: 8px; margin-bottom: 0.5rem; width: 90%;"></div>
+                        <div class="skeleton" style="height: 30px; border-radius: 8px; margin-bottom: 0.5rem; width: 85%;"></div>
+                        <div class="skeleton" style="height: 30px; border-radius: 8px; margin-bottom: 0.5rem; width: 95%;"></div>
+                    </div>
+
+                    <div id="loading-papeleria" class="spinner hidden"></div>
+                    <div id="papeleria-grid-container" class="papeleria-grid hidden"></div>
+                    <div id="sin-estudiante-msg" style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                        <i class="ph ph-magnifying-glass"></i> Busque un estudiante para gestionar su papelería
+                    </div>
+                </section>
+
+                <section id="section-tipos" class="admin-section">
+                    <div class="admin-section-header">
+                        <h2>Tipos de Papelería</h2>
+                        <p>Administre los tipos de documentos que se registran en el sistema.</p>
+                    </div>
+
+                    <form id="form-tipo" style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                        <div style="flex: 2; min-width: 200px;">
+                            <input type="text" id="input-nuevo-tipo" class="form-control" placeholder="Ej. Certificado de Estudios, Fotografías, Partida de Nacimiento..." required>
+                        </div>
+                        <div style="flex: 1; min-width: 140px;">
+                            <select id="input-categoria-tipo" class="form-control" style="padding:0.75rem 1rem;">
+                                <option value="Documentos Personales">Documentos Personales</option>
+                                <option value="Académicos">Académicos</option>
+                                <option value="Administrativos">Administrativos</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="btn-crear-tipo" class="btn btn-primary"><i class="ph ph-plus"></i> Agregar Tipo</button>
+                    </form>
+
+                    <div id="tipos-container">
+                        <p style="color: var(--text-muted);">Cargando tipos...</p>
+                    </div>
+                </section>
+
+                <section id="section-alumnos" class="admin-section">
+                    <div class="admin-section-header">
+                        <h2>Gestión de Alumnos</h2>
+                        <p>Registre, busque, edite y exporte estudiantes del sistema.</p>
+                    </div>
+
+                    <div style="background-color: var(--primary-bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 1rem;">Crear Cuenta de Alumno</h3>
+                        <form id="form-crear-alumno">
+                            <div class="search-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 1rem;">
+                                <div class="form-group">
+                                    <label for="al-cui" class="form-label">CUI (13 dígitos):</label>
+                                    <input type="text" id="al-cui" class="form-control" placeholder="Ej. 2810452310101" minlength="13" maxlength="13" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="al-nombre" class="form-label">Nombre Completo:</label>
+                                    <input type="text" id="al-nombre" class="form-control" placeholder="Ej. Juan Pérez Gómez" required>
+                                </div>
+                            </div>
+                            <div class="search-grid" style="grid-template-columns: 1fr 1fr 1fr; margin-bottom: 1.25rem;">
+                                <div class="form-group">
+                                    <label for="al-grado" class="form-label">Grado Académico:</label>
+                                    <input type="text" id="al-grado" class="form-control" placeholder="Ej. 3ro Básico" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="al-seccion" class="form-label">Sección:</label>
+                                    <input type="text" id="al-seccion" class="form-control" placeholder="Ej. A" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Año(s) (máx. 3):</label>
+                                    <div id="al-anios" style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+                                    </div>
+                                    <div style="margin-top:0.5rem;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                                        <label style="font-size:0.75rem;color:var(--text-muted);">Años adicionales (opcional):</label>
+                                        <input type="text" id="al-anios-extra" class="form-control" placeholder="Ej. 2014, 2015" style="padding:0.3rem 0.5rem;width:180px;font-size:0.8rem;">
+                                        <span style="font-size:0.7rem;color:var(--text-muted);">Separados por coma</span>
+                                    </div>
+                                    <span id="al-anios-error" style="font-size:0.75rem;color:var(--danger);display:none;">Máximo 3 años</span>
+                                </div>
+                            </div>
+                            <div class="search-grid" style="grid-template-columns: 1fr 1fr 1fr; margin-bottom: 1rem;">
+                                <div class="form-group">
+                                    <label for="al-caja" class="form-label">Caja / Archivero:</label>
+                                    <input type="text" id="al-caja" class="form-control" placeholder="Ej. Caja 4, Archivero 2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="al-ubicacion" class="form-label">Ubicación:</label>
+                                    <input type="text" id="al-ubicacion" class="form-control" placeholder="Ej. Estante B, Bodega 2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="al-posicion" class="form-label">Posición en Caja:</label>
+                                    <input type="text" id="al-posicion" class="form-control" placeholder="Ej. #12 de 30">
+                                </div>
+                            </div>
+                            <button type="submit" id="btn-crear-alumno-submit" class="btn btn-primary"><i class="ph ph-user"></i> CREAR ESTUDIANTE</button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:1rem;align-items:center;">
+                            <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin:0;">Estudiantes Registrados</h3>
+                            <div style="flex:1;min-width:180px;">
+                                <input type="text" id="filtro-alumnos" class="form-control" placeholder="Filtrar por nombre o CUI..." style="padding:0.5rem 0.75rem;font-size:0.85rem;">
+                            </div>
+                            <button id="btn-refrescar-alumnos" class="btn btn-outline" style="font-size:0.8rem;padding:0.5rem 1rem;"><i class="ph ph-arrows-clockwise"></i> Actualizar</button>
+                            <button id="btn-exportar-alumnos" class="btn btn-success" style="font-size:0.8rem;padding:0.5rem 1rem;"><i class="ph ph-download-simple"></i> Exportar Excel</button>
+                            <button id="btn-importar-alumnos" class="btn btn-primary" style="font-size:0.8rem;padding:0.5rem 1rem;"><i class="ph ph-upload-simple"></i> Importar</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table" id="tabla-estudiantes">
+                                <thead>
+                                    <tr>
+                                        <th>CUI</th>
+                                        <th>Nombre Completo</th>
+                                        <th>Grado</th>
+                                        <th>Sección</th>
+                                        <th>Año(s)</th>
+                                        <th>Consentimiento</th>
+                                        <th>Expediente Físico</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-estudiantes">
+                                    <tr><td colspan="8" style="text-align: center; color: var(--text-muted);">Cargando...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-alertas" class="admin-section">
+                    <div class="admin-section-header">
+                        <h2>Alertas de Papelería Incompleta</h2>
+                        <p>Estudiantes con documentación pendiente, ordenados por prioridad.</p>
+                    </div>
+                    <div id="alertas-container">
+                        <p style="color: var(--text-muted);">Cargando...</p>
+                    </div>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div class="stat-card" style="flex:1;min-width:200px;overflow:visible !important;">
+                            <h4 style="font-size:0.85rem;margin-bottom:0.75rem;">Exportar Reportes</h4>
+                            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                            <div class="export-dropdown">
+                                <button class="btn btn-outline export-dropdown-trigger" style="font-size:0.8rem;"><i class="ph ph-download-simple"></i> Exportar CSV <i class="ph ph-caret-down"></i></button>
+                                <div class="export-dropdown-menu">
+                                    <button class="export-dropdown-item" data-estado="" data-anio=""><i class="ph ph-file-csv"></i> Todo</button>
+                                    <button class="export-dropdown-item" data-estado="hace_falta" data-anio=""><i class="ph ph-warning"></i> Solo Hace Falta</button>
+                                    <button class="export-dropdown-item" data-estado="no_entregado" data-anio=""><i class="ph ph-x-circle"></i> No Entregados</button>
+                                </div>
+                            </div>
+                            <select id="csv-anio" class="form-control" style="padding:0.3rem 0.5rem;font-size:0.8rem;width:auto;">
+                                <option value="">Todos los años</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-logs" class="admin-section">
+                    <div class="admin-section-header">
+                        <h2>Registro de Auditoría</h2>
+                        <p>Logs de acceso y modificaciones en el sistema.</p>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+                        <button id="btn-refrescar-logs" class="btn btn-outline" style="font-size: 0.8rem;"><i class="ph ph-arrows-clockwise"></i> Actualizar Logs</button>
+                    </div>
+
+                    <div class="table-responsive" style="max-height: min(500px, 60vh); overflow-y: auto;">
+                        <table class="table" id="tabla-logs">
+                            <thead>
+                                <tr>
+                                    <th>Fecha y Hora</th>
+                                    <th>Usuario (CUI)</th>
+                                    <th>Nombre</th>
+                                    <th>Acción</th>
+                                    <th>Detalles</th>
+                                    <th>IP</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-logs">
+                                <tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Cargando...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="logs-pagination"></div>
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Instituto María Belén Medrano - Control de Papelería Escolar.</p>
+    </footer>
+
+    <script src="/static/js/admin.js"></script>
+
+    <!-- Edit Student Modal -->
+    <div id="modal-editar-alumno" class="modal">
+        <div class="modal-content" style="max-width:500px;">
+            <div class="modal-header">
+                <h3 class="modal-title">Editar Estudiante</h3>
+                <button type="button" id="btn-cerrar-editar" class="modal-close">&times;</button>
+            </div>
+            <form id="form-editar-alumno">
+                <div class="modal-body">
+                    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">CUI: <strong id="edit-cui-display"></strong></p>
+                    <input type="hidden" id="edit-cui">
+                    <div class="form-group">
+                        <label class="form-label">Nombre Completo</label>
+                        <input type="text" id="edit-nombre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Grado Académico</label>
+                        <input type="text" id="edit-grado" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Sección</label>
+                        <input type="text" id="edit-seccion" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Años (separados por coma)</label>
+                        <input type="text" id="edit-anios" class="form-control" placeholder="Ej. 2023,2024,2025">
+                    </div>
+                    <hr style="border:none;border-top:1px solid var(--border);margin:1rem 0;">
+                    <h4 style="font-size:0.9rem;margin-bottom:0.75rem;">📦 Expediente Físico</h4>
+                    <p id="edit-exp-codigo" style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem;"></p>
+                    <div class="search-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group">
+                            <label class="form-label">Caja / Archivero</label>
+                            <input type="text" id="edit-caja" class="form-control" placeholder="Ej. Caja 4">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Ubicación</label>
+                            <input type="text" id="edit-ubicacion" class="form-control" placeholder="Ej. Estante B">
+                        </div>
+                    </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" onclick="document.getElementById('modal-editar-alumno').classList.remove('active')">Cancelar</button>
+                    <button type="submit" id="btn-guardar-editar" class="btn btn-primary"><i class="ph ph-check"></i> Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Import Modal -->
+    <div id="modal-importar-alumnos" class="modal">
+        <div class="modal-content" style="max-width:700px;">
+            <div class="modal-header">
+                <h3 class="modal-title"><i class="ph ph-upload-simple"></i> Importar Estudiantes</h3>
+                <button type="button" class="modal-close" onclick="document.getElementById('modal-importar-alumnos').classList.remove('active')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color:var(--text-muted);margin-bottom:1rem;">Seleccione un archivo Excel (.xlsx), CSV, Word (.docx) o TXT con datos de estudiantes. El sistema detectará automáticamente las columnas CUI, Nombre, Grado, Sección.</p>
+                <div id="import-step-upload">
+                    <div style="border:2px dashed var(--border);border-radius:12px;padding:2rem;text-align:center;">
+                        <input type="file" id="import-file-input" accept=".xlsx,.csv,.txt,.docx" style="display:none;">
+                        <div id="import-dropzone" style="cursor:pointer;">
+                            <i class="ph ph-file-arrow-up" style="font-size:2.5rem;color:var(--accent);display:block;margin-bottom:0.5rem;"></i>
+                            <p style="font-weight:500;">Arrastre un archivo aquí o <a href="#" id="import-click-link">haga clic para seleccionar</a></p>
+                            <p style="font-size:0.8rem;color:var(--text-muted);">Formatos: .xlsx, .csv, .txt, .docx</p>
+                        </div>
+                    </div>
+                    <div id="import-preview" class="hidden" style="margin-top:1rem;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+                            <span id="import-file-name" style="font-weight:600;"></span>
+                            <span id="import-record-count" style="color:var(--text-muted);font-size:0.85rem;"></span>
+                        </div>
+                        <div class="table-responsive" style="max-height:300px;overflow-y:auto;">
+                            <table class="table" id="import-preview-table">
+                                <thead id="import-preview-head"></thead>
+                                <tbody id="import-preview-body"></tbody>
+                            </table>
+                        </div>
+                        <div id="import-errors" class="hidden" style="margin-top:0.75rem;padding:0.75rem;background:#fef2f2;border-radius:8px;color:#b91c1c;font-size:0.85rem;"></div>
+                        <div style="display:flex;gap:0.75rem;justify-content:flex-end;margin-top:1rem;">
+                            <button class="btn btn-outline" onclick="document.getElementById('modal-importar-alumnos').classList.remove('active')">Cancelar</button>
+                            <button id="btn-confirmar-importar" class="btn btn-primary" disabled><i class="ph ph-check"></i> Importar Datos</button>
+                        </div>
+                    </div>
+                    <div id="import-result" class="hidden" style="margin-top:1rem;padding:1rem;border-radius:8px;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Historial Expediente Modal -->
+    <div id="modal-historial-expediente" class="modal">
+        <div class="modal-content" style="max-width:600px;">
+            <div class="modal-header">
+                <h3 class="modal-title">📋 Historial de Expediente Físico</h3>
+                <button type="button" class="modal-close" onclick="document.getElementById('modal-historial-expediente').classList.remove('active')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size:0.9rem;margin-bottom:1rem;">Estudiante: <strong id="hist-exp-nombre"></strong> · CUI: <strong id="hist-exp-cui"></strong></p>
+                <div id="historial-movimientos" style="max-height:400px;overflow-y:auto;">
+                    <div style="text-align:center;padding:2rem;color:var(--text-muted);">Cargando...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Toast container for notifications -->
+    <div id="toast-container"></div>
+</body>
+</html>

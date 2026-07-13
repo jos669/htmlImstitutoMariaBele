@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Control de Papelería - Instituto María Belén Medrano</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3QgeD0iNCIgeT0iMiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI4IiByeD0iMyIgZmlsbD0iIzI1NjNlYiIvPjxwYXRoIGQ9Ik0xMCAxNGw0IDQgOC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <style>
+        :root { --font: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .hidden { display: none !important; }
+
+        .status-cell {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .status-en_orden { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+        .status-no_entregado { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+        .status-hace_falta { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+        .status-null { background: #f1f5f9; color: #94a3b8; border: 1px solid #e2e8f0; }
+
+        .papeleria-grid {
+            overflow-x: auto;
+            max-width: 100%;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+        }
+        .papeleria-grid > * {
+            min-width: 0;
+        }
+        .papeleria-grid table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .papeleria-grid th, .papeleria-grid td {
+            padding: 0.75rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .papeleria-grid th {
+            background: var(--primary-bg);
+            font-weight: 700;
+            color: var(--primary-dark);
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+        .papeleria-grid th:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 3;
+            background: var(--primary-bg);
+        }
+        .papeleria-grid td:first-child {
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-dark);
+            position: sticky;
+            left: 0;
+            background: var(--white);
+            z-index: 1;
+        }
+        .papeleria-grid tr:hover td {
+            background: var(--primary-bg);
+        }
+        .papeleria-grid tr:hover td:first-child {
+            background: var(--primary-bg);
+        }
+
+        @media (max-width: 768px) {
+            .papeleria-grid th,
+            .papeleria-grid td:first-child,
+            .papeleria-grid th:first-child {
+                position: static !important;
+            }
+            .papeleria-grid th, .papeleria-grid td {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.78rem;
+            }
+            .papeleria-grid table {
+                font-size: 0.78rem;
+            }
+        }
+
+        .resumen-bar {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .resumen-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .resumen-count {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .filtros-rapidos {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .filtro-btn {
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .filtro-btn:hover, .filtro-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .observacion-tooltip {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            max-width: 200px;
+            cursor: help;
+        }
+
+        .btn-loading {
+            position: relative;
+            color: transparent !important;
+            pointer-events: none;
+        }
+        .btn-loading::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .cui-valid { color: var(--success); }
+        .cui-invalid { color: var(--danger); }
+    </style>
+</head>
+<body>
+
+    <header id="app-header" class="hidden">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="/static/logo.png" alt="Logo" style="height: 75px; width: 75px; object-fit: contain;">
+                <div>
+                    <h1>Control de Papelería</h1>
+                    <div class="connection-status">
+                        <span class="status-dot"></span>
+                        <span>Servidor En Línea</span>
+                    </div>
+                </div>
+            </div>
+            <div class="user-badge">
+                <button type="button" id="theme-toggle-header" style="width:36px;height:36px;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;background:rgba(255,255,255,0.12);color:white;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" title="Cambiar tema"><i class="ph ph-sun-dim"></i></button>
+                <div class="user-info">
+                    <div id="user-display-name" class="user-name">Estudiante</div>
+                    <div id="user-display-meta" class="user-meta">CUI: 0000000000000 | Grado: -</div>
+                </div>
+                <button id="btn-logout" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);">
+                    🔒 Salir
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <div id="global-alert" class="alert alert-danger" style="margin-bottom: 1.5rem; display: none;"></div>
+
+        <div id="login-section" class="login-wrapper">
+            <div class="login-card" style="position: relative;">
+                <button type="button" id="theme-toggle-login" style="position:absolute;top:1rem;right:1rem;width:36px;height:36px;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;background:var(--primary-bg);border:1px solid var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;z-index:10;" title="Cambiar tema"><i class="ph ph-sun-dim"></i></button>
+                <div class="login-header">
+                    <img src="/static/logo.png" alt="Logo" style="height: 150px; width: 150px; object-fit: contain; margin-bottom: 1rem;">
+                    <h2>Control de Papelería</h2>
+                    <p>Consulte el estado de su documentación escolar</p>
+                </div>
+
+                <form id="login-form" style="position: relative;">
+                    <div class="form-group" style="position: relative;">
+                        <label for="cui" class="form-label">CUI del Alumno (13 dígitos):</label>
+                        <input type="text" id="cui" class="form-control" placeholder="Ej. 2810452310101" minlength="13" maxlength="13" required autocomplete="username" style="padding-right: 2.2rem;">
+                        <span id="cui-validation-icon" style="position: absolute; right: 0.75rem; bottom: 0.75rem; font-size: 1.1rem; line-height: 1; display: none;"></span>
+                    </div>
+
+                    <div class="legal-box">
+                        <h4>Consentimiento Informado de Datos Escolares</h4>
+                        <p>De conformidad con la Constitución Política de la República de Guatemala (Artículos 24, 30 y 31):</p>
+                        <p>Al acceder a este portal, usted acepta que el establecimiento procese digitalmente el expediente escolar del alumno para uso exclusivo de consulta por parte del estudiante o su tutor legal.</p>
+                        <p>El sistema almacena registros de acceso e IP por motivos de auditoría y seguridad informática.</p>
+                    </div>
+
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="consentimiento">
+                        <span>Acepto expresamente los términos de privacidad y procesamiento de datos escolares.</span>
+                    </label>
+
+                    <button type="submit" id="btn-login-submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; border-radius: 8px;">
+                        🔑 INGRESAR
+                    </button>
+                </form>
+
+                <div style="text-align: center; margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted);">
+                    ¿Necesita ayuda? Contacte a soporte académico en <br>
+                    <a href="mailto:soporte@instituto.edu.gt" style="color: var(--primary); text-decoration: none; font-weight: 600;">soporte@instituto.edu.gt</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="dashboard-section" class="hidden">
+            
+            <div class="breadcrumb">
+                <a href="#">Inicio</a>
+                <span class="divider">></span>
+                <span class="active">Mis Documentos</span>
+            </div>
+
+            <!-- Stats Dashboard Row -->
+            <div class="stats-row" id="stats-dashboard"></div>
+
+            <div class="controls-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.3rem; color: var(--primary-dark); font-weight: 700;">Filtrar Entregas</h2>
+                    <div style="display: flex; gap: 0.5rem;" id="view-toggle-container">
+                        <button id="btn-view-table" class="filtro-btn active" style="margin-bottom: 0; padding: 0.35rem 0.85rem; display: flex; align-items: center; gap: 0.25rem;">📋 Tabla</button>
+                        <button id="btn-view-cards" class="filtro-btn" style="margin-bottom: 0; padding: 0.35rem 0.85rem; display: flex; align-items: center; gap: 0.25rem;">🎴 Tarjetas</button>
+                    </div>
+                </div>
+
+                <div class="filtros-rapidos" id="filtros-anio">
+                    <button class="filtro-btn active" data-anio="">Todos los años</button>
+                </div>
+            </div>
+
+            <!-- Skeleton Loading Markup -->
+            <div id="skeleton-loading" class="hidden" style="margin: 2rem 0;">
+                <div class="skeleton" style="height: 50px; border-radius: 8px; margin-bottom: 1rem;"></div>
+                <div class="skeleton" style="height: 35px; border-radius: 8px; margin-bottom: 0.5rem; width: 90%;"></div>
+                <div class="skeleton" style="height: 35px; border-radius: 8px; margin-bottom: 0.5rem; width: 85%;"></div>
+                <div class="skeleton" style="height: 35px; border-radius: 8px; margin-bottom: 0.5rem; width: 95%;"></div>
+            </div>
+
+            <div id="loading-spinner" class="spinner hidden"></div>
+
+            <div id="empty-state" class="empty-state hidden">
+                <div class="empty-icon">📋</div>
+                <h3>No hay datos de papelería</h3>
+                <p>Aún no se ha registrado información sobre su documentación escolar.</p>
+            </div>
+
+            <div id="papeleria-container" class="papeleria-grid hidden"></div>
+
+            <div id="verificacion-section" class="hidden" style="margin-top:2rem;padding:1.5rem;border-radius:12px;background:var(--card-bg);box-shadow:0 2px 12px var(--shadow);">
+                <h3 style="margin-bottom:0.5rem;">🔐 Verificación de Documentos</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">Comparta este enlace para que terceros puedan verificar la autenticidad de sus documentos.</p>
+                <div id="qr-display" style="text-align:center;padding:1rem;background:var(--bg-secondary);border-radius:8px;">
+                    <div style="font-size:0.9rem;color:var(--text-muted);">Cargando...</div>
+                </div>
+            </div>
+
+            <div id="password-section" class="hidden" style="margin-top:2rem;padding:1.5rem;border-radius:12px;background:var(--card-bg);box-shadow:0 2px 12px var(--shadow);">
+                <h3 style="margin-bottom:0.5rem;">🔑 Cambiar Contraseña</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">Cambie su contraseña de acceso al sistema.</p>
+                <form id="password-form" style="display:flex;flex-direction:column;gap:0.75rem;max-width:400px;">
+                    <div class="form-group">
+                        <label class="form-label">Contraseña Actual</label>
+                        <input type="password" id="password-actual" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Nueva Contraseña (mín. 4 caracteres)</label>
+                        <input type="password" id="password-nuevo" class="form-control" required minlength="4">
+                    </div>
+                    <button type="submit" id="btn-cambiar-password" class="btn btn-primary" style="align-self:flex-start;"><i class="ph ph-key"></i> Actualizar Contraseña</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Instituto María Belén Medrano - Control de Papelería Escolar. Ciudad de Guatemala.</p>
+    </footer>
+
+    <!-- Toast container for notifications -->
+    <div id="toast-container"></div>
+
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
