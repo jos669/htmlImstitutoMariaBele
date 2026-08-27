@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Documento - Instituto Nacional MB Medrano García</title>
+    <link rel="stylesheet" href="./static/css/style.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="./config.js"></script>
+    <script>
+    (function () {
+      var base = (window.API_BASE || '').replace(/\/+$/, '');
+      var origFetch = window.fetch;
+      window.fetch = function (url, opts) {
+        opts = opts || {};
+        opts.credentials = 'include';
+        if (typeof url === 'string' && url.indexOf('/api/') === 0 && base) url = base + url;
+        return origFetch(url, opts);
+      };
+    })();
+    </script>
+    <style>
+        body { font-family: var(--font); display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: var(--bg-primary); }
+        .verification-card { max-width: 480px; width: 90%; padding: 2rem; border-radius: var(--radius-lg); background: var(--bg-card); border: 1px solid var(--border); text-align: center; }
+        .verification-card h1 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .verification-card p { color: var(--text-secondary); margin: 0.25rem 0; }
+        .seal { font-size: 3rem; margin-bottom: 1rem; }
+        .seal.valid { color: var(--success); }
+        .seal.invalid { color: var(--danger); }
+        .info-grid { display: grid; gap: 0.75rem; text-align: left; margin: 1.5rem 0; padding: 1.25rem; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border); }
+        .info-grid .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-tertiary); }
+        .info-grid .value { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+        .badge { display: inline-block; padding: 0.35rem 1rem; border-radius: var(--radius-pill); font-size: 0.85rem; font-weight: 600; background: var(--success-muted); color: var(--success); margin-top: 1rem; }
+        .error-text { color: var(--danger); font-weight: 500; margin: 1rem 0; }
+        .back-link { display: inline-block; margin-top: 1.5rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        .meta { font-size: 0.8rem; color: var(--text-secondary); margin-top: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="verification-card">
+        <div id="verificacion-resultado"></div>
+        <a href="./portal.html" class="back-link">← Ir al portal estudiantil</a>
+    </div>
+    <script>
+    (function () {
+      var estadosMap = {
+        'en_orden': '🟢 En orden',
+        'hace_falta': '🟡 Hace falta',
+        'no_entregado': '🔴 No entregado'
+      };
+
+      function renderizar(data) {
+        var target = document.getElementById('verificacion-resultado');
+        target.innerHTML = '';
+
+        if (data && data.valido) {
+          var est = data.estudiante || {};
+          var docs = est.documentos || [];
+
+          target.innerHTML =
+            '<div class="seal valid">✅</div>' +
+            '<h1>Documento Verificado</h1>' +
+            '<p>El siguiente documento fue emitido por</p>' +
+            '<p><strong>Instituto Nacional María Belén Medrano García</strong></p>' +
+            '<div class="info-grid">' +
+              '<div><div class="label">CUI</div><div class="value" data-v="cui"></div></div>' +
+              '<div><div class="label">Nombre Completo</div><div class="value" data-v="nombre"></div></div>' +
+              '<div><div class="label">Grado</div><div class="value" data-v="grado"></div></div>' +
+              '<div><div class="label">Sección</div><div class="value" data-v="seccion"></div></div>' +
+            '</div>' +
+            '<div class="badge">Documento Auténtico ✓</div>' +
+            (docs.length
+              ? '<div style="margin-top:1.5rem;text-align:left;">' +
+                '<h3 style="font-size:1rem;margin-bottom:0.75rem;">Documentos Registrados</h3>' +
+                '<div style="overflow-x:auto;">' +
+                '<table style="width:100%;border-collapse:collapse;font-size:0.8rem;">' +
+                '<thead><tr style="background:var(--bg-secondary, #f1f5f9);">' +
+                '<th style="padding:0.4rem 0.5rem;border:1px solid var(--border, #e2e8f0);">Tipo</th>' +
+                '<th style="padding:0.4rem 0.5rem;border:1px solid var(--border, #e2e8f0);">Año</th>' +
+                '<th style="padding:0.4rem 0.5rem;border:1px solid var(--border, #e2e8f0);">Estado</th>' +
+                '</tr></thead>' +
+                '<tbody id="ver-docs"></tbody>' +
+                '</table></div></div>'
+              : '') +
+            '<div class="meta">Verificado electrónicamente. Fecha de emisión: <span data-v="fecha"></span></div>';
+
+          target.querySelector('[data-v="cui"]').textContent = est.cui != null ? String(est.cui) : '—';
+          target.querySelector('[data-v="nombre"]').textContent = est.nombre_completo != null ? String(est.nombre_completo) : '—';
+          target.querySelector('[data-v="grado"]').textContent = est.grado != null ? String(est.grado) : '—';
+          target.querySelector('[data-v="seccion"]').textContent = est.seccion != null ? String(est.seccion) : '—';
+          target.querySelector('[data-v="fecha"]').textContent = est.creado ? est.creado.slice(0, 10) : 'N/A';
+
+          if (docs.length) {
+            var tbody = document.getElementById('ver-docs');
+            docs.forEach(function (doc) {
+              var tr = document.createElement('tr');
+              var valores = [doc.tipo, doc.anio, estadosMap[doc.estado] || '—'];
+              valores.forEach(function (val) {
+                var td = document.createElement('td');
+                td.style.cssText = 'padding:0.4rem 0.5rem;border:1px solid var(--border, #e2e8f0);';
+                td.textContent = val != null ? String(val) : '—';
+                tr.appendChild(td);
+              });
+              tbody.appendChild(tr);
+            });
+          }
+        } else {
+          var err = (data && data.error) ? data.error : 'Token de verificación inválido o expirado.';
+          target.innerHTML =
+            '<div class="seal invalid">❌</div>' +
+            '<h1>Verificación Fallida</h1>' +
+            '<p class="error-text" data-v="error"></p>' +
+            '<p>Si escaneó un código QR, asegúrese de que el enlace esté completo y no haya expirado.</p>';
+          target.querySelector('[data-v="error"]').textContent = err;
+        }
+      }
+
+      var token = new URLSearchParams(window.location.search).get('token');
+      if (!token) {
+        renderizar({ valido: false, error: 'Enlace de verificación incompleto. Asegúrese de escanear el código QR completo.' });
+      } else {
+        fetch('/api/verificacion/publico/' + encodeURIComponent(token))
+          .then(function (r) { return r.json(); })
+          .then(renderizar)
+          .catch(function () { renderizar({ valido: false, error: 'No se pudo contactar el servicio de verificación.' }); });
+      }
+    })();
+    </script>
+</body>
+</html>

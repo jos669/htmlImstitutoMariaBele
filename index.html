@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Sistema de control de expedientes y papelería escolar del Instituto Nacional María Belén Medrano García.">
+    <meta name="csrf-token" content="">
+<script src="./config.js"></script>
+<script>
+(function () {
+  var base = (window.API_BASE || '').replace(/\/+$/, '');
+  var origFetch = window.fetch;
+  window.fetch = function (url, opts) {
+    opts = opts || {};
+    opts.credentials = 'include'; // sesión cross-origin
+    if (typeof url === 'string' && url.indexOf('/api/') === 0 && base) url = base + url;
+    return origFetch(url, opts);
+  };
+  var origOpen = window.open;
+  window.open = function (url, target, features) {
+    if (typeof url === 'string' && url.indexOf('/api/') === 0 && base) url = base + url;
+    return origOpen(url, target, features);
+  };
+  // Cargar el token CSRF en el meta antes de cualquier POST
+  if (base) {
+    fetch(base + '/api/csrf-token', { credentials: 'include' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        if (m && d.csrf_token) m.setAttribute('content', d.csrf_token);
+      })
+      .catch(function () {});
+  }
+})();
+</script>
+
+    <title>Control de Expedientes - Instituto Nacional María Belén Medrano García</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3QgeD0iNCIgeT0iMiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI4IiByeD0iMyIgZmlsbD0iIzFCMkE0QSIvPjxwYXRoIGQ9Ik0xMCAxNGw0IDQgOC04IiBzdHJva2U9IiNDNTlCMjciIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=">
+    <link rel="stylesheet" href="./static/css/style.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Manrope:wght@400..800&display=swap');
+
+        /* SISTEMA VISUAL LANDING (autocontenido): papel calido + navy + dorado */
+        .landing-body {
+            --l-bg: #F6F3EC;
+            --l-surface: #FFFEFA;
+            --l-ink: #14213D;
+            --l-ink-soft: #33405C;
+            --l-muted: #5D6678;
+            --l-gold: #C59B27;
+            --l-gold-deep: #8F6A13;
+            --l-line: #E5DCC8;
+            --l-navy: #1B2A4A;
+            --l-navy-deep: #12203C;
+            --l-display: 'Fraunces', Georgia, serif;
+            --l-body: 'Manrope', -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--l-ink);
+            font-family: var(--l-body);
+            position: relative;
+            background: #0A0F1E;
+        }
+
+        .landing-body.dark-theme {
+            --l-bg: #10131C;
+            --l-surface: #1B2133;
+            --l-ink: #EEF1F8;
+            --l-ink-soft: #C7CDDC;
+            --l-muted: #A6AFC4;
+            --l-gold: #D9B354;
+            --l-gold-deep: #C9A44C;
+            --l-line: #343D5C;
+            --l-navy: #C9A44C;
+            --l-navy-deep: #E6C976;
+            background: transparent;
+        }
+
+        .landing-body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.05;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* Fondo de video: capa fija + entrada con zoom + parallax al scroll */
+        .landing-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            background: #0A0F1E;
+        }
+
+        .landing-bg-enter {
+            position: absolute;
+            inset: 0;
+            animation: bgReveal 1.1s ease-out 0.05s both;
+            will-change: opacity, transform;
+        }
+
+        .landing-bg-parallax {
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            transform: translate3d(0, 0, 0) scale(1.06);
+            will-change: transform;
+        }
+
+        .landing-bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .landing-bg-scrim {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 15, 30, 0.74) 0%, rgba(10, 15, 30, 0.42) 45%, rgba(10, 15, 30, 0.66) 100%);
+        }
+
+        @keyframes bgReveal {
+            from { opacity: 0; transform: scale(1.07); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Header */
+        .landing-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 15, 30, 0.72);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(230, 201, 118, 0.22);
+            padding: 0.85rem 1.5rem;
+        }
+
+        .landing-header-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .landing-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            min-width: 0;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .landing-brand img {
+            height: 52px;
+            width: 52px;
+            object-fit: contain;
+            flex-shrink: 0;
+            filter: drop-shadow(0 1px 2px rgba(20, 33, 61, 0.22));
+        }
+
+        .landing-brand-text h1 {
+            font-family: var(--l-display);
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #F7F4EC;
+            line-height: 1.25;
+            margin: 0;
+        }
+
+        .landing-brand-text p {
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #E6C976;
+            margin: 0.15rem 0 0;
+        }
+
+        .landing-header .header-icon-btn {
+            color: #C7CDDC;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(230, 201, 118, 0.35);
+            background: rgba(255, 255, 255, 0.06);
+            font-size: 1.15rem;
+            transition: border-color 0.2s, color 0.2s, transform 0.2s;
+        }
+
+        .landing-header .header-icon-btn:hover {
+            color: #E6C976;
+            border-color: #E6C976;
+            transform: rotate(15deg);
+        }
+
+        /* Main */
+        .landing-main {
+            flex: 1;
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: clamp(2.5rem, 7vh, 4.5rem) 1.25rem clamp(2rem, 5vh, 3rem);
+            position: relative;
+            z-index: 2;
+        }
+
+        .landing-hero {
+            text-align: center;
+            margin: 0 auto 3rem;
+            max-width: 760px;
+        }
+
+        .landing-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: #E6C976;
+            margin: 0 0 1.1rem;
+        }
+
+        .landing-eyebrow::before,
+        .landing-eyebrow::after {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: currentColor;
+            opacity: 0.55;
+        }
+
+        .landing-hero h2 {
+            font-family: var(--l-display);
+            font-weight: 800;
+            font-size: clamp(2.1rem, 6vw, 3.6rem);
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            margin: 0 0 1.1rem;
+            color: #F7F4EC;
+            text-shadow: 0 2px 24px rgba(10, 15, 30, 0.55);
+        }
+
+        .landing-hero h2 em {
+            font-style: italic;
+            font-weight: 600;
+            color: #E6C976;
+        }
+
+        .landing-hero .landing-lead {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #D6DBE8;
+            max-width: 560px;
+            margin: 0 auto;
+            text-shadow: 0 1px 12px rgba(10, 15, 30, 0.5);
+        }
+
+        .landing-separator {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 1.4rem auto 0;
+            width: 120px;
+        }
+
+        .landing-separator::before,
+        .landing-separator::after {
+            content: "";
+            height: 2px;
+            flex: 1;
+            background: #E6C976;
+            opacity: 0.55;
+            border-radius: 2px;
+        }
+
+        .landing-separator::after {
+            content: "\25C6";
+            flex: none;
+            width: auto;
+            height: auto;
+            background: none;
+            font-size: 0.55rem;
+            color: #E6C976;
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        /* Cards */
+        .landing-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .landing-card {
+            position: relative;
+            background: var(--l-surface);
+            border: 1px solid var(--l-line);
+            border-radius: 18px;
+            padding: 2.4rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            box-shadow: 0 22px 48px -24px rgba(8, 12, 26, 0.65);
+        }
+
+        .landing-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--l-gold), var(--l-navy) 65%, transparent);
+            opacity: 0.9;
+        }
+
+        .landing-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--l-gold);
+            box-shadow: 0 18px 40px -18px rgba(20, 33, 61, 0.28);
+        }
+
+        .landing-card-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(197, 155, 39, 0.14);
+            border: 1px solid rgba(197, 155, 39, 0.35);
+            font-size: 1.7rem;
+            color: var(--l-gold-deep);
+            margin-bottom: 1.15rem;
+        }
+
+        .landing-body.dark-theme .landing-card-icon {
+            background: rgba(217, 179, 84, 0.12);
+            color: var(--l-gold);
+        }
+
+        .landing-card h3 {
+            font-family: var(--l-display);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--l-ink);
+            margin: 0 0 0.55rem;
+            line-height: 1.25;
+        }
+
+        .landing-card p {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--l-muted);
+            margin: 0 0 1.6rem;
+            flex: 1;
+        }
+
+        .landing-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.8rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            font-family: var(--l-body);
+            border-radius: 12px;
+            background: var(--l-navy-deep);
+            color: #F8F5EC;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 18px -10px rgba(20, 33, 61, 0.55);
+        }
+
+        .landing-body.dark-theme .landing-cta {
+            background: var(--l-navy-deep);
+            color: #161207;
+        }
+
+        .landing-cta .cta-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .landing-cta .cta-arrow {
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .landing-cta:hover {
+            background: var(--l-gold-deep);
+            color: #FFFEFA;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -10px rgba(143, 106, 19, 0.55);
+        }
+
+        .landing-body.dark-theme .landing-cta:hover {
+            background: var(--l-gold);
+            color: #171B28;
+        }
+
+        .landing-cta:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+
+        .landing-cta:focus-visible,
+        .landing-brand:focus-visible,
+        .landing-footer a:focus-visible,
+        .landing-header .header-icon-btn:focus-visible {
+            outline: 2px solid var(--l-gold-deep);
+            outline-offset: 3px;
+        }
+
+        /* Footer */
+        .landing-footer {
+            border-top: 1px solid rgba(230, 201, 118, 0.22);
+            padding: 1.6rem 1.25rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            background: rgba(10, 15, 30, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .landing-footer p {
+            font-size: 0.78rem;
+            color: #C3CADA;
+            margin: 0.25rem 0;
+            line-height: 1.6;
+        }
+
+        .landing-footer a {
+            color: #E6C976;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .landing-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Entrada */
+        .landing-hero { animation: fadeUp 0.55s ease-out 0.05s both; }
+        .landing-card { animation: fadeUp 0.5s ease-out 0.18s both; }
+        .landing-card:nth-child(2) { animation-delay: 0.3s; }
+        .landing-footer { animation: fadeUp 0.5s ease-out 0.42s both; }
+
+        /* Estado estable para capturas/enlaces directos: ?nofade */
+        .landing-noanim .landing-hero,
+        .landing-noanim .landing-card,
+        .landing-noanim .landing-footer,
+        .landing-noanim .landing-bg-enter { animation: none !important; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: none; }
+        }
+
+        /* ── Ayuda / Soporte ── */
+        .landing-section {
+            padding: 4rem 1.25rem 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .landing-section-inner {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .landing-section h2 {
+            font-family: var(--l-display);
+            font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+            font-weight: 800;
+            text-align: center;
+            color: #F7F4EC;
+            margin: 0 0 0.5rem;
+        }
+
+        .landing-section-inner > p {
+            text-align: center;
+            color: var(--l-muted);
+            margin: 0 0 2.2rem;
+            font-size: 0.96rem;
+        }
+
+        .landing-body.dark-theme .landing-section h2 { color: var(--l-ink); }
+        .landing-body.dark-theme .landing-section-inner > p { color: var(--l-muted); }
+
+        /* FAQ Accordion */
+        .faq-list { margin-bottom: 2.8rem; }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(230, 201, 118, 0.18);
+            padding: 0.3rem 0;
+        }
+
+        details.faq-item summary {
+            cursor: pointer;
+            font-weight: 700;
+            font-family: var(--l-display);
+            font-size: 1rem;
+            color: #E6DBC8;
+            padding: 0.85rem 0.5rem 0.85rem 1.6rem;
+            list-style: none;
+            position: relative;
+            transition: color 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        details.faq-item summary::-webkit-details-marker { display: none; }
+
+        details.faq-item summary::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--l-body);
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: var(--l-gold);
+            transition: transform 0.25s ease;
+        }
+
+        details.faq-item[open] summary::before {
+            content: "−";
+        }
+
+        details.faq-item[open] summary { color: var(--l-gold); }
+
+        .landing-body.dark-theme details.faq-item summary { color: var(--l-ink-soft); }
+        .landing-body.dark-theme details.faq-item[open] summary { color: var(--l-gold); }
+
+        details.faq-item p {
+            padding: 0 0.5rem 1.2rem 1.6rem;
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: #C3CADA;
+        }
+
+        .landing-body.dark-theme details.faq-item p { color: var(--l-muted); }
+
+        /* Form & Consult boxes */
+        .ayuda-form-box,
+        .ayuda-consult-box {
+            background: var(--l-surface);
+            border: 1px solid var(--l-line);
+            border-radius: 16px;
+            padding: 2rem 1.8rem;
+            margin-bottom: 1.6rem;
+            box-shadow: 0 8px 24px -12px rgba(8, 12, 26, 0.45);
+        }
+
+        .ayuda-form-box h3,
+        .ayuda-consult-box h3 {
+            font-family: var(--l-display);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--l-ink);
+            margin: 0 0 0.35rem;
+        }
+
+        .ayuda-consult-box p {
+            font-size: 0.88rem;
+            color: var(--l-muted);
+            margin: 0 0 1.25rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--l-ink-soft);
+            margin-bottom: 0.35rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.65rem 0.8rem;
+            font-size: 0.92rem;
+            font-family: var(--l-body);
+            border-radius: 10px;
+            border: 1.5px solid var(--l-line);
+            background: var(--l-bg);
+            color: var(--l-ink);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--l-gold);
+            box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.18);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 80px; }
+
+        /* Picker de archivo accesible: input nativo oculto + label como botón + nombre con ellipsis/wrap */
+        .file-picker {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .file-picker input[type="file"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+        }
+        .file-picker-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.95rem;
+            border: 1px solid var(--l-line);
+            border-radius: 999px;
+            background: var(--l-surface);
+            color: var(--l-ink);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s, color 0.2s;
+        }
+        .file-picker-btn:hover {
+            border-color: var(--l-gold);
+            background: rgba(197, 155, 39, 0.1);
+            color: var(--l-navy);
+        }
+        .file-picker-name {
+            flex: 1 1 160px;
+            min-width: 0;
+            font-size: 0.82rem;
+            color: var(--l-muted);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .ayuda-form-box .landing-cta { margin-top: 1rem; width: auto; }
+        .ayuda-consult-box .landing-cta { margin-top: 0.5rem; }
+
+        /* Result / Message boxes */
+        .ayuda-result { margin-top: 1rem; }
+
+        .ayuda-msg {
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .ayuda-msg.error {
+            background: rgba(220, 53, 69, 0.14);
+            color: #F28B82;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        .ayuda-msg.success {
+            background: rgba(46, 160, 67, 0.14);
+            color: #7EE081;
+            border: 1px solid rgba(46, 160, 67, 0.3);
+        }
+
+        .landing-body.dark-theme .ayuda-msg.error { color: #F28B82; }
+        .landing-body.dark-theme .ayuda-msg.success { color: #7EE081; }
+
+        /* Success state */
+        .ayuda-success {
+            background: rgba(46, 160, 67, 0.1);
+            border: 1px solid rgba(46, 160, 67, 0.3);
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--l-ink);
+            line-height: 1.7;
+        }
+
+        .ayuda-success i.ph {
+            font-size: 2rem;
+            color: #2EA043;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .codigo-display {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 1.15rem;
+            font-weight: 800;
+            background: var(--l-bg);
+            color: var(--l-gold-deep);
+            padding: 0.35rem 0.9rem;
+            border-radius: 8px;
+            margin: 0.35rem 0;
+            letter-spacing: 0.06em;
+        }
+
+        .landing-body.dark-theme .codigo-display { color: var(--l-gold); }
+
+        /* Photo preview */
+        .foto-preview { margin-top: 0.5rem; }
+
+        .foto-thumb {
+            max-width: 160px;
+            max-height: 120px;
+            border-radius: 8px;
+            border: 1px solid var(--l-line);
+            object-fit: cover;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-pendiente {
+            background: rgba(220, 53, 69, 0.15);
+            color: #F28B82;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        .badge-en_proceso {
+            background: rgba(240, 186, 42, 0.15);
+            color: #F0BA2A;
+            border: 1px solid rgba(240, 186, 42, 0.3);
+        }
+
+        .badge-resuelto {
+            background: rgba(46, 160, 67, 0.15);
+            color: #7EE081;
+            border: 1px solid rgba(46, 160, 67, 0.3);
+        }
+
+        .landing-body.dark-theme .badge-pendiente { color: #F28B82; }
+        .landing-body.dark-theme .badge-en_proceso { color: #F0BA2A; }
+        .landing-body.dark-theme .badge-resuelto { color: #7EE081; }
+
+        /* Consult result */
+        .ayuda-consulta-info {
+            background: var(--l-bg);
+            border: 1px solid var(--l-line);
+            border-radius: 12px;
+            padding: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .ayuda-consulta-info p { margin: 0.3rem 0; font-size: 0.92rem; color: var(--l-ink-soft); }
+
+        .ayuda-respuesta {
+            margin-top: 0.6rem;
+            padding: 0.8rem;
+            background: var(--l-surface);
+            border-radius: 10px;
+            border-left: 3px solid var(--l-gold);
+        }
+
+        .ayuda-respuesta strong { display: block; margin-bottom: 0.25rem; }
+        .ayuda-respuesta p { margin: 0; color: var(--l-ink-soft); }
+
+        .ayuda-pendiente-msg {
+            color: var(--l-gold-deep);
+            font-style: italic;
+        }
+
+        .landing-body.dark-theme .ayuda-pendiente-msg { color: var(--l-gold); }
+
+        /* Input placeholder color */
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--l-muted);
+            opacity: 0.7;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .landing-hero, .landing-card, .landing-footer, .landing-bg-enter { animation: none !important; }
+        }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .landing-header { padding: 0.6rem 0.9rem; }
+            .landing-brand img { height: 44px; width: 44px; }
+            .landing-brand-text h1 { font-size: 0.85rem; }
+            .landing-brand-text p { letter-spacing: 0.16em; font-size: 0.6rem; }
+            .landing-hero { margin-bottom: 2.2rem; }
+            .landing-hero .landing-lead { font-size: 0.94rem; }
+            .landing-cards { grid-template-columns: 1fr; gap: 1.1rem; }
+            .landing-card { padding: 1.9rem 1.4rem 1.5rem; }
+        }
+
+        /* Form responsive: colapsa los pares de campos a una sola columna
+           en viewports pequeños para evitar desborde horizontal y texto cortado */
+        @media (max-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+            }
+            .ayuda-form-box,
+            .ayuda-consult-box {
+                padding: 1.5rem 1.1rem;
+            }
+            .ayuda-form-box .landing-cta,
+            .ayuda-consult-box .landing-cta {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .ayuda-form-box,
+            .ayuda-consult-box {
+                padding: 1.2rem 0.9rem;
+                border-radius: 12px;
+            }
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 0.88rem;
+            }
+            .file-picker-name {
+                flex-basis: 100%;
+                white-space: normal;
+                word-break: break-word;
+            }
+        }
+    </style>
+</head>
+<body class="landing-body">
+
+    <div class="landing-bg" aria-hidden="true">
+        <div class="landing-bg-enter">
+            <div class="landing-bg-parallax" id="landing-bg-parallax">
+                <video class="landing-bg-video" autoplay muted loop playsinline preload="auto" poster="./static/video/landing-bg-poster.jpg">
+                    <source src="./static/video/landing-bg.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="landing-bg-scrim"></div>
+        </div>
+    </div>
+
+    <header class="landing-header">
+        <div class="landing-header-inner">
+            <a class="landing-brand" href="./index.html">
+                <img src="./static/logo.png" alt="Escudo del Instituto Nacional María Belén Medrano García">
+                <div class="landing-brand-text">
+                    <h1>Instituto Nacional María Belén Medrano García</h1>
+                    <p>Control de Expedientes Escolares</p>
+                </div>
+            </a>
+            <button type="button" id="theme-toggle" class="header-icon-btn" title="Cambiar tema"><i class="ph ph-sun-dim"></i></button>
+        </div>
+    </header>
+
+    <main class="landing-main" id="main">
+        <section class="landing-hero" aria-labelledby="landing-title">
+            <p class="landing-eyebrow">Instituto Nacional &middot; Guatemala</p>
+            <h2 id="landing-title">Control de <em>Expedientes</em> Escolares</h2>
+            <p class="landing-lead">Consulta y gestión de documentación estudiantil para alumnos, padres de familia y personal administrativo del instituto.</p>
+            <div class="landing-separator" aria-hidden="true"></div>
+        </section>
+
+        <section class="landing-cards" aria-label="Accesos al sistema">
+            <article class="landing-card">
+                <div class="landing-card-icon"><i class="ph ph-shield-check" aria-hidden="true"></i></div>
+                <h3>Soy Administrador</h3>
+                <p>Gestioná expedientes, alumnos y reportes del sistema de control documental.</p>
+                <a href="./admin_login.html" class="landing-cta">
+                    <span class="cta-label"><i class="ph ph-shield-check" aria-hidden="true"></i> Ingresar</span>
+                    <span class="cta-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></span>
+                </a>
+            </article>
+            <article class="landing-card">
+                <div class="landing-card-icon"><i class="ph ph-folder-open" aria-hidden="true"></i></div>
+                <h3>Soy Estudiante o Padre de Familia</h3>
+                <p>Consultá el estado de tu documentación escolar y verificá tu expediente académico.</p>
+                <a href="./portal.html" class="landing-cta">
+                    <span class="cta-label"><i class="ph ph-arrow-right" aria-hidden="true"></i> Acceder</span>
+                    <span class="cta-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></span>
+                </a>
+            </article>
+        </section>
+
+        <section id="ayuda" class="landing-section" aria-label="Ayuda y Soporte">
+            <div class="landing-section-inner">
+                <h2>¿Necesitás ayuda?</h2>
+                <p>Envianos tu consulta o revisá el estado de un mensaje existente.</p>
+
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary>¿Cómo consulto mi papelería?</summary>
+                        <p>Ingresá al Portal Estudiantil con tu CUI y PIN. Allí podrás ver todos tus documentos y su estado actual.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Dónde puedo pagar?</summary>
+                        <p>Los pagos se realizan en la caja del instituto en horario de 8:00 a 15:00 horas. Presentá tu CUI.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Mi título ya está listo?</summary>
+                        <p>Consultá en el Portal Estudiantil si tenés expediente completo. Si tenés un código de seguimiento, usá el formulario abajo para verificarlo.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo uso mi código de seguimiento AYU-…?</summary>
+                        <p>Ingresá tu código y el documento (CUI o teléfono) que registraste al enviar el mensaje. Verás el estado y la respuesta del instituto.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué pasa con mi expediente físico?</summary>
+                        <p>El expediente físico se solicita en la secretaría del instituto. Podés dar seguimiento a su estado desde el portal.</p>
+                    </details>
+                </div>
+
+                <div class="ayuda-form-box">
+                    <h3>Envianos un mensaje</h3>
+                    <form id="ayuda-form" enctype="multipart/form-data">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ayuda-nombre">Nombre completo *</label>
+                                <input type="text" id="ayuda-nombre" name="nombre" required minlength="2" maxlength="120">
+                            </div>
+                            <div class="form-group">
+                                <label for="ayuda-telefono">Teléfono</label>
+                                <input type="tel" id="ayuda-telefono" name="telefono" pattern="[\d\s\+]{8,15}" placeholder="Ej: 5555 1234">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ayuda-cui">CUI (13 dígitos, opcional)</label>
+                                <input type="text" id="ayuda-cui" name="cui" inputmode="numeric" maxlength="13" pattern="\d{13}" placeholder="2810 45231 0101">
+                            </div>
+                            <div class="form-group">
+                                <label for="ayuda-categoria">Categoría *</label>
+                                <select id="ayuda-categoria" name="categoria" required>
+                                    <option value="">Seleccioná una categoría</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ayuda-mensaje">Mensaje *</label>
+                            <textarea id="ayuda-mensaje" name="mensaje" required minlength="10" maxlength="2000" rows="4" placeholder="Describí tu consulta o problema..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="ayuda-foto">Foto (opcional, máximo 5 MB)</label>
+                            <div class="file-picker">
+                                <input type="file" id="ayuda-foto" name="foto" accept="image/jpeg,image/png,image/webp">
+                                <label for="ayuda-foto" class="file-picker-btn"><i class="ph ph-paperclip" aria-hidden="true"></i> Elegir archivo</label>
+                                <span id="ayuda-foto-nombre" class="file-picker-name">Sin archivos seleccionados</span>
+                            </div>
+                            <div id="ayuda-foto-preview" class="foto-preview"></div>
+                        </div>
+                        <button type="submit" class="landing-cta" id="ayuda-submit">
+                            <span class="cta-label"><i class="ph ph-paper-plane-tilt"></i> Enviar consulta</span>
+                        </button>
+                    </form>
+                    <div id="ayuda-result" class="ayuda-result" hidden></div>
+                </div>
+
+                <div class="ayuda-consult-box">
+                    <h3>Consultá tu mensaje</h3>
+                    <p>Si ya enviaste un mensaje, ingresá tu código de seguimiento y el documento que registraste (CUI o teléfono).</p>
+                    <form id="ayuda-consult-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ayuda-consult-codigo">Código de seguimiento</label>
+                                <input type="text" id="ayuda-consult-codigo" placeholder="AYU-2026-XXXX-XX" pattern="^AYU-\d{4}-\d{4}-[A-Z0-9]{2}$">
+                            </div>
+                            <div class="form-group">
+                                <label for="ayuda-consult-documento">Documento (CUI o teléfono)</label>
+                                <input type="text" id="ayuda-consult-documento" placeholder="CUI de 13 dígitos o teléfono">
+                            </div>
+                        </div>
+                        <button type="submit" class="landing-cta" id="ayuda-consult-submit">
+                            <span class="cta-label"><i class="ph ph-magnifying-glass"></i> Consultar</span>
+                        </button>
+                    </form>
+                    <div id="ayuda-consult-result" class="ayuda-result" hidden></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="landing-footer">
+        <p>&copy; 2026 Instituto Nacional María Belén Medrano Garc&iacute;a &mdash; Control de Expedientes Escolares</p>
+        <p>Soporte: <a href="mailto:soporte@instituto.edu.gt">soporte@instituto.edu.gt</a></p>
+    </footer>
+
+    <script>
+        (function () {
+            if (new URLSearchParams(location.search).has('nofade')) {
+                document.body.classList.add('landing-noanim');
+            }
+            var saved = localStorage.getItem('theme');
+            if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body.classList.add('dark-theme');
+            }
+            var btn = document.getElementById('theme-toggle');
+            if (btn) {
+                function updateIcon() {
+                    var isDark = document.body.classList.contains('dark-theme');
+                    btn.innerHTML = isDark ? '<i class="ph ph-moon"></i>' : '<i class="ph ph-sun-dim"></i>';
+                }
+                btn.addEventListener('click', function () {
+                    document.body.classList.toggle('dark-theme');
+                    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+                    updateIcon();
+                });
+                updateIcon();
+            }
+            // Parallax del video de fondo: se desplaza más lento que el contenido
+            var bgParallax = document.getElementById('landing-bg-parallax');
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (bgParallax && !reduceMotion) {
+                var ticking = false;
+                function onScroll() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            var y = window.scrollY || 0;
+                            bgParallax.style.transform = 'translate3d(0,' + (y * -0.3).toFixed(1) + 'px,0) scale(1.06)';
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+        })();
+
+        // ── Ayuda Landing ──
+        (function() {
+            function getCSRFToken() {
+                var meta = document.querySelector('meta[name="csrf-token"]');
+                return meta ? meta.getAttribute('content') : '';
+            }
+            function showAyudaMsg(element, type, text) {
+                element.innerHTML = '<div class="ayuda-msg ' + type + '">' + text + '</div>';
+                element.hidden = false;
+            }
+            function hideAyudaMsg(element) {
+                element.hidden = true;
+                element.innerHTML = '';
+            }
+            function showAyudaSuccess(element, codigo) {
+                element.innerHTML = '<div class="ayuda-success">' +
+                    '<i class="ph ph-check-circle"></i> ¡Mensaje enviado!<br>' +
+                    '<strong>Tu código de seguimiento es:</strong><br>' +
+                    '<span class="codigo-display">' + codigo + '</span><br>' +
+                    '<small>Guardalo para consultar la respuesta después.</small>' +
+                    '</div>';
+                element.hidden = false;
+            }
+
+            // Load categories
+            var catSelect = document.getElementById('ayuda-categoria');
+            if (catSelect) {
+                fetch('/api/ayuda/config')
+                    .then(function(r) { return r.json(); })
+                    .then(function(data) {
+                        data.categorias.forEach(function(c) {
+                            var opt = document.createElement('option');
+                            opt.value = c;
+                            opt.textContent = c;
+                            catSelect.appendChild(opt);
+                        });
+                    })
+                    .catch(function() { /* silent fallback */ });
+            }
+
+            // Photo preview
+            var fotoInput = document.getElementById('ayuda-foto');
+            var fotoPreview = document.getElementById('ayuda-foto-preview');
+            var fotoNombre = document.getElementById('ayuda-foto-nombre');
+            if (fotoInput) {
+                fotoInput.addEventListener('change', function() {
+                    fotoPreview.innerHTML = '';
+                    var file = fotoInput.files[0];
+                    if (fotoNombre) {
+                        fotoNombre.textContent = file ? file.name : 'Sin archivos seleccionados';
+                        fotoNombre.title = file ? file.name : '';
+                    }
+                    if (file) {
+                        if (file.size > 5 * 1024 * 1024) {
+                            fotoPreview.innerHTML = '<span class="ayuda-error">El archivo es muy grande (máximo 5 MB).</span>';
+                            fotoInput.value = '';
+                            return;
+                        }
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            var img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.className = 'foto-thumb';
+                            fotoPreview.appendChild(img);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+            // Submit form
+            var ayudaForm = document.getElementById('ayuda-form');
+            var ayudaResult = document.getElementById('ayuda-result');
+            if (ayudaForm) {
+                ayudaForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var submitBtn = document.getElementById('ayuda-submit');
+                    submitBtn.disabled = true;
+                    hideAyudaMsg(ayudaResult);
+
+                    var cuiInput = document.getElementById('ayuda-cui');
+                    if (cuiInput.value && !/^\d{13}$/.test(cuiInput.value.replace(/\s/g, ''))) {
+                        showAyudaMsg(ayudaResult, 'error', 'El CUI debe tener exactamente 13 dígitos.');
+                        submitBtn.disabled = false;
+                        return;
+                    }
+
+                    var formData = new FormData(ayudaForm);
+                    fetch('/api/ayuda', {
+                        method: 'POST',
+                        headers: { 'X-CSRF-Token': getCSRFToken() },
+                        body: formData
+                    })
+                    .then(function(r) {
+                        if (r.status === 201) return r.json().then(function(d) { showAyudaSuccess(ayudaResult, d.codigo); });
+                        if (r.status === 422) return r.json().then(function(d) { showAyudaMsg(ayudaResult, 'error', d.error + (d.campos ? ' (' + Object.keys(d.campos).join(', ') + ')' : '')); });
+                        if (r.status === 429) return r.json().then(function(d) { showAyudaMsg(ayudaResult, 'error', d.error); });
+                        return r.json().then(function(d) { showAyudaMsg(ayudaResult, 'error', d.error || 'Error al enviar.'); });
+                    })
+                    .catch(function() { showAyudaMsg(ayudaResult, 'error', 'Error de conexión. Intente de nuevo.'); })
+                    .finally(function() { submitBtn.disabled = false; });
+                });
+            }
+
+            // Consult form
+            var consultForm = document.getElementById('ayuda-consult-form');
+            var consultResult = document.getElementById('ayuda-consult-result');
+            if (consultForm) {
+                consultForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var submitBtn = document.getElementById('ayuda-consult-submit');
+                    submitBtn.disabled = true;
+                    hideAyudaMsg(consultResult);
+
+                    var codigo = document.getElementById('ayuda-consult-codigo').value.trim().toUpperCase();
+                    var documento = document.getElementById('ayuda-consult-documento').value.trim();
+
+                    if (!codigo || !documento) {
+                        showAyudaMsg(consultResult, 'error', 'Completá ambos campos.');
+                        submitBtn.disabled = false;
+                        return;
+                    }
+
+                    fetch('/api/ayuda/consultar', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': getCSRFToken() },
+                        body: JSON.stringify({ codigo: codigo, documento: documento })
+                    })
+                    .then(function(r) {
+                        if (r.status === 200) return r.json().then(function(d) {
+                            var html = '<div class="ayuda-consulta-info">' +
+                                '<p><strong>Estado:</strong> <span class="badge badge-' + d.estado + '">' + d.estado + '</span></p>' +
+                                '<p><strong>Fecha:</strong> ' + new Date(d.creado_en).toLocaleDateString('es-GT') + '</p>';
+                            if (d.respuesta) {
+                                html += '<div class="ayuda-respuesta"><strong>Respuesta:</strong><p>' + d.respuesta + '</p></div>';
+                            } else {
+                                html += '<p class="ayuda-pendiente-msg">Tu mensaje está pendiente de respuesta.</p>';
+                            }
+                            html += '</div>';
+                            consultResult.innerHTML = html;
+                            consultResult.hidden = false;
+                        });
+                        if (r.status === 404) return r.json().then(function(d) { showAyudaMsg(consultResult, 'error', d.error); });
+                        if (r.status === 429) return r.json().then(function(d) { showAyudaMsg(consultResult, 'error', d.error); });
+                        return r.json().then(function(d) { showAyudaMsg(consultResult, 'error', d.error || 'Error al consultar.'); });
+                    })
+                    .catch(function() { showAyudaMsg(consultResult, 'error', 'Error de conexión. Intente de nuevo.'); })
+                    .finally(function() { submitBtn.disabled = false; });
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>
