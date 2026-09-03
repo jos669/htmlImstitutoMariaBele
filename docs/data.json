@@ -1,0 +1,4436 @@
+{
+  "version": 0,
+  "fecha_actualizacion": "2026-09-03T14:38:23Z",
+  "datos": {
+    "papeleria": [
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Certificado de Estudios",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2024,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Boleta de Notas",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotocopia de CUI",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2025,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Boleta de Notas",
+        "estado": "no_entregado",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Certificado de Estudios",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Conducta",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Constancia de Inscripción",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotocopia de CUI",
+        "estado": "hace_falta",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Fotografías tamaño cédula",
+        "estado": "en_orden",
+        "observaciones": ""
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "anio": 2026,
+        "tipo": "Partida de Nacimiento",
+        "estado": "en_orden",
+        "observaciones": ""
+      }
+    ],
+    "expedientes": [
+      {
+        "id_publico": "b2d219854faa",
+        "codigo_expediente": "EXP-0002",
+        "caja": "Caja C2",
+        "ubicacion": "Estante 5, Nivel 1",
+        "posicion_caja": "Pos. 38",
+        "estado": "En revisión",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A"
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "codigo_expediente": "EXP-0001",
+        "caja": "Caja A1",
+        "ubicacion": "Estante 1, Nivel 3",
+        "posicion_caja": "Pos. 16",
+        "estado": "En revisión",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A"
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "codigo_expediente": "EXP-0003",
+        "caja": "Caja A2",
+        "ubicacion": "Estante 2, Nivel 1",
+        "posicion_caja": "Pos. 36",
+        "estado": "Localizado",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B"
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "codigo_expediente": "EXP-0004",
+        "caja": "Caja B1",
+        "ubicacion": "Estante 1, Nivel 1",
+        "posicion_caja": "Pos. 25",
+        "estado": "Localizado",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B"
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "codigo_expediente": "EXP-0006",
+        "caja": "Caja C2",
+        "ubicacion": "Estante 2, Nivel 3",
+        "posicion_caja": "Pos. 6",
+        "estado": "Localizado",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A"
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "codigo_expediente": "EXP-0005",
+        "caja": "Caja C2",
+        "ubicacion": "Estante 5, Nivel 3",
+        "posicion_caja": "Pos. 37",
+        "estado": "Localizado",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A"
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "codigo_expediente": "EXP-0008",
+        "caja": "Caja C2",
+        "ubicacion": "Estante 2, Nivel 2",
+        "posicion_caja": "Pos. 11",
+        "estado": "Extraviado",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B"
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "codigo_expediente": "EXP-0007",
+        "caja": "Caja B1",
+        "ubicacion": "Estante 4, Nivel 3",
+        "posicion_caja": "Pos. 11",
+        "estado": "Localizado",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B"
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "codigo_expediente": "EXP-0010",
+        "caja": "Caja B1",
+        "ubicacion": "Estante 2, Nivel 2",
+        "posicion_caja": "Pos. 48",
+        "estado": "Localizado",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A"
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "codigo_expediente": "EXP-0009",
+        "caja": "Caja B1",
+        "ubicacion": "Estante 1, Nivel 2",
+        "posicion_caja": "Pos. 37",
+        "estado": "Localizado",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A"
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "codigo_expediente": "EXP-0012",
+        "caja": "Caja B1",
+        "ubicacion": "Estante 1, Nivel 3",
+        "posicion_caja": "Pos. 28",
+        "estado": "En revisión",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B"
+      },
+      {
+        "id_publico": "0867db930a54",
+        "codigo_expediente": "EXP-0011",
+        "caja": "Caja A1",
+        "ubicacion": "Estante 1, Nivel 2",
+        "posicion_caja": "Pos. 41",
+        "estado": "Localizado",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B"
+      }
+    ],
+    "estudiantes": [
+      {
+        "id_publico": "b2d219854faa",
+        "nombre_completo": "Carlos Andrés Méndez Ruano",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 14,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "9ef0fb1635db",
+        "nombre_completo": "María José López García",
+        "grado": "1ro Básico",
+        "seccion": "A",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 13,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "5b5241aa3cab",
+        "nombre_completo": "Ana Lucía Hernández Cruz",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 17,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "95e7e8f06d14",
+        "nombre_completo": "Pedro Antonio Ramírez Soto",
+        "grado": "1ro Básico",
+        "seccion": "B",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 14,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "299f7da95f6e",
+        "nombre_completo": "Diego Alejandro Castillo Lima",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 12,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "55e00c8883be",
+        "nombre_completo": "Luisa Fernanda Morales Paz",
+        "grado": "2do Básico",
+        "seccion": "A",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 13,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "b2a1581159dd",
+        "nombre_completo": "Jorge Esteban Fuentes Marroquín",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 14,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "5bab8056d45b",
+        "nombre_completo": "Sofía Valentina Rivas Orellana",
+        "grado": "2do Básico",
+        "seccion": "B",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 13,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "975b23ed9073",
+        "nombre_completo": "Brandon Josué Díaz Hernández",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 17,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "1f00c86f5f3f",
+        "nombre_completo": "Katherine Mishell García Pineda",
+        "grado": "3ro Básico",
+        "seccion": "A",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 14,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "0a5aa4864436",
+        "nombre_completo": "Kevin Alexander Soto Pérez",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 13,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_publico": "0867db930a54",
+        "nombre_completo": "Valeria Nicole Aguilar Ramos",
+        "grado": "3ro Básico",
+        "seccion": "B",
+        "carrera": "",
+        "anios": "2024,2025,2026",
+        "estado_general": "incompleto",
+        "requeridos": 21,
+        "completados": 17,
+        "por_categoria": [
+          {
+            "categoria": "Certificados de Básicos",
+            "items": [
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Boleta de Notas",
+                "estado": "no_entregado",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Certificado de Estudios",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Conducta",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Constancia de Inscripción",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          },
+          {
+            "categoria": "Documentos Personales",
+            "items": [
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotocopia de CUI",
+                "estado": "hace_falta",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Fotografías tamaño cédula",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2024
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2025
+              },
+              {
+                "tipo": "Partida de Nacimiento",
+                "estado": "en_orden",
+                "observaciones": "",
+                "anio": 2026
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
