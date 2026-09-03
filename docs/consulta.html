@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Consulta de papelería — Instituto MBM</title>
+  <link rel="stylesheet" href="static/css/consulta.css">
+</head>
+<body>
+  <header>
+    <h1>Consulta de papelería</h1>
+    <span id="data-version-badge"></span>
+  </header>
+
+  <main>
+    <!-- ═══ Skeleton (mientras carga data.json) ═══ -->
+    <section id="section-skeleton" class="hidden">
+    </section>
+
+    <!-- ═══ Sin datos ═══ -->
+    <section id="section-sin-datos">
+      <div class="icono">📋</div>
+      <p>Aún no hay datos publicados.</p>
+      <p class="detalle">Cuando el APK publique el primer data.json, aquí aparecerá la información de papelería. Volvé a consultar más tarde.</p>
+    </section>
+
+    <!-- ═══ Búsqueda ═══ -->
+    <section id="section-busqueda" class="hidden">
+      <div class="search-box">
+        <input type="text" id="input-buscar" placeholder="Buscar por nombre completo..." autocomplete="off">
+        <button id="btn-buscar">Buscar</button>
+      </div>
+      <p class="search-hint" id="hint">Escribí al menos 3 caracteres para buscar.</p>
+    </section>
+
+    <!-- ═══ Lista de resultados ═══ -->
+    <section id="section-lista" class="hidden">
+      <div id="lista-resultados"></div>
+    </section>
+
+    <!-- ═══ Detalle de estudiante ═══ -->
+    <section id="section-detalle" class="hidden">
+      <button id="btn-volver">← Volver</button>
+      <div id="detalle-contenido"></div>
+    </section>
+  </main>
+
+  <footer>
+    Instituto de Educación Básica María Belén Medrano García
+  </footer>
+
+  <script src="static/js/data-loader.js"></script>
+  <script src="static/js/consulta.js"></script>
+</body>
+</html>
